@@ -59,14 +59,15 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on:
+      ubuntu-latest
 
-        # echo "AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}"
-        # echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+      # echo "AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}"
+      # echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
     steps:
-    - name: Log Values
-      run: |
-        echo "Logging values:"
+      # - name: Log Values
+      #   run:
+      #     echo "Logging values:"
 
       - name: Checkout Repository
         uses: actions/checkout@v2
