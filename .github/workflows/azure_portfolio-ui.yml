@@ -48,7 +48,7 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/portfolio-ui" # App source code path
-          output_location: "portfolio-ui/build" # Built app content directory - optional
+          output_location: "portfolio-ui/dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 # name: Azure Static Web Apps CI/CD
 
