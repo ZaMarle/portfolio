@@ -1,27 +1,3 @@
-# trigger:
-# - master # This can be the branch you want to trigger the pipeline from
-
-# pool:
-#   vmImage: 'ubuntu-latest'
-
-# steps:
-# - script: npm install
-#   displayName: 'Install dependencies'
-
-# - script: npm run build # Build your static web app
-#   displayName: 'Build'
-
-# - task: CopyFiles@2
-#   inputs:
-#     contents: 'build/**' # Specify the build output folder
-#     targetFolder: '$(Build.ArtifactStagingDirectory)'
-#   displayName: 'Copy build files'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     artifactName: 'drop'
-#   displayName: 'Publish build artifacts'
-
 name: Azure Static Web Apps CI/CD
 
 on:
@@ -45,60 +21,5 @@ jobs:
           azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
-          ###### Repository/Build Configurations ######
           app_location: "/portfolio-ui" # App source code path relative to repository root
-          output_location: "/dist" # Built app content directory, relative to app_location - optional
-          # app_artifact_location: /portfolio-ui/dist
-          ###### End of Repository/Build Configurations ######
-
-          # azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
-          # repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          # action: "upload"
-          # action_build_dir: ./build
-          # ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          # app_location: "/portfolio-ui" # App source code path
-          # # output_location: "build" # Built app content directory - optional
-          # ###### End of Repository/Build Configurations ######
-# name: Azure Static Web Apps CI/CD
-
-# on:
-#   push:
-#     branches:
-#       - master
-
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       # - name: Log Values
-#       #   run: |
-#       #     echo "Logging values:"
-#       #     echo "AZURE_STATIC_WEB_APPS_API_TOKEN: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657"
-#       #     echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
-
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
-
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: "16"
-
-#       - name: Install Dependencies
-#         run: npm install
-#         working-directory: portfolio-ui
-
-#       - name: Build
-#         run: npm run build
-#         working-directory: portfolio-ui
-
-#       - name: Deploy to Azure Static Web Apps
-#         uses: azure/static-web-apps-deploy@v1
-#         with:
-#           # azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-#           azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
-#           repo_token: ${{ secrets.GITHUB_TOKEN }}
-#           app_location: "portfolio-ui"
-#           output_location: "portfolio-ui/dist"
+          output_location: "/dist"
