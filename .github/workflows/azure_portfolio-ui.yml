@@ -47,8 +47,8 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/portfolio-ui" # App source code path relative to repository root
+          # output_location: "/portfolio-ui/dist" # Built app content directory, relative to app_location - optional
           app_artifact_location: /portfolio-ui/dist
-          output_location: "/portfolio-ui/dist" # Built app content directory, relative to app_location - optional
           ###### End of Repository/Build Configurations ######
 
           # azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
@@ -100,5 +100,5 @@ jobs:
 #           # azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
 #           azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
 #           repo_token: ${{ secrets.GITHUB_TOKEN }}
-#           app_location: "portfolio-ui/build"
-#           output_location: "portfolio-ui/build"
+#           app_location: "portfolio-ui"
+#           output_location: "portfolio-ui/dist"
