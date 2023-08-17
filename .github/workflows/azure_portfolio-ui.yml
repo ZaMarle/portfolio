@@ -29,6 +29,12 @@ on:
     branches:
       - master
 
+
+- script: |
+    echo "azure_static_web_apps_api_token: {{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DELIGHTFUL_SMOKE_04EBBC910 }}"
+    echo "repo_token: ${{ secrets.GITHUB_TOKEN }}"
+  displayName: 'Log Values'
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
