@@ -1,0 +1,19 @@
+.home-page-component {
+  background-color: beige;
+
+  .button {
+    display: block;
+    color: #213547;
+    font-size: 8.5vw;
+    font-family: 'Helvetica';
+    line-height: revert;
+
+    &:focus {
+      outline: none !important;
+    }
+    &:hover {
+      background-color: inherit;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.navbar-component .button {
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+.navbar-component .button:focus {
+  outline: none !important;
+}
