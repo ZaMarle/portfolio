@@ -47,7 +47,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/portfolio-ui" # App source code path relative to repository root
-          output_location: "public" # Built app content directory, relative to app_location - optional
+          # output_location: "" # Built app content directory, relative to app_location - optional
           ###### End of Repository/Build Configurations ######
 
           # azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
