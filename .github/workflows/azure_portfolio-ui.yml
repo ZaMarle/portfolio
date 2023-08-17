@@ -45,10 +45,11 @@ jobs:
           azure_static_web_apps_api_token: ecc0fae58d79d68a59a3c6b55f0f664064a866daaab513ca6aa6187971703d8f3-bbb2c0f8-94fb-4640-899e-a309305c06d5010229657
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
+          action_build_dir: ./build
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/portfolio-ui" # App source code path
-          output_location: "portfolio-ui/dist" # Built app content directory - optional
+          # output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 # name: Azure Static Web Apps CI/CD
 
