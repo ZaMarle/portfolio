@@ -47,7 +47,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/portfolio-ui" # App source code path relative to repository root
-          app_artifact_location: /portfolio-ui/build
+          app_artifact_location: /portfolio-ui/dist
           # output_location: "" # Built app content directory, relative to app_location - optional
           ###### End of Repository/Build Configurations ######
 
