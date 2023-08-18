@@ -16,4 +16,31 @@
       font-style: italic;
     }
   }
+
+  .grid-outer {
+    margin: 0 auto 0 auto;
+    padding: 24px;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    color: #213547;
+    font-family: Helvetica;
+  }
+
+  .grid-outer.stacked {
+    height: auto;
+  }
+
+  .grid-item-one {
+    text-align: left;
+    padding-right: 6vw;
+    margin-top: 255px;
+  }
+
+  .grid-item-one.stacked {
+    text-align: left;
+    padding-right: 6vw;
+    margin-top: 0px;
+  }
 }

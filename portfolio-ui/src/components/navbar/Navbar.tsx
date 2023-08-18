@@ -1,48 +1,50 @@
-import { AppBar, Button, Toolbar } from '@mui/material';
-import './Navbar.scss';
+import { AppBar, Button, IconButton, Toolbar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import './Navbar.scss';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const navItems = ['About', 'Projects', 'Blog', 'Contact'];
 
   return (
-    <AppBar className="navbar-component" position="static">
-      <Toolbar style={{ alignSelf: 'center' }}>
-        {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-
-        <div style={{ display: 'flex' }}>
-          <Button
+    <AppBar
+      className="navbar-component"
+      position="static"
+      style={{ backgroundColor: 'beige', boxShadow: 'none' }}
+    >
+      <Toolbar>
+        <div
+          style={{
+            width: '100%',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto 1fr',
+            alignItems: 'center',
+          }}
+        >
+          <IconButton
             className="button"
-            variant="text"
-            onClick={() => navigate('/')}
-            style={{ color: '#fff' }}
+            aria-label="settings"
+            style={{ justifySelf: 'left' }}
+            onClick={() => navigate(`/`)}
           >
-            Home
-          </Button>
-          <Button
-            className="button"
-            variant="text"
-            onClick={() => navigate('/About')}
-            style={{ color: '#fff' }}
-          >
-            About
-          </Button>
-          <Button
-            className="button"
-            variant="text"
-            onClick={() => navigate('/Projects')}
-            style={{ color: '#fff' }}
-          >
-            Projects
-          </Button>
+            <HomeIcon />
+          </IconButton>
+          <div>
+            {navItems.map((item) => (
+              <Button
+                key={item}
+                className="button"
+                variant="text"
+                onClick={() => navigate(`/${item}`)}
+              >
+                {item}
+              </Button>
+            ))}
+            {/* <IconButton aria-label="settings">
+              <SettingsIcon style={{ color: '#213547' }} />
+            </IconButton> */}
+          </div>
         </div>
       </Toolbar>
     </AppBar>

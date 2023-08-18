@@ -1,12 +1,18 @@
 .navbar-component .button {
   text-decoration: none;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Helvetica;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
-}
+  color: #213547;
+  transition: color 0s;
 
-.navbar-component .button:focus {
-  outline: none !important;
+  &:focus {
+    outline: none !important;
+  }
+  &:hover {
+    background-color: inherit;
+    color: rgb(95 114 131);
+  }
 }

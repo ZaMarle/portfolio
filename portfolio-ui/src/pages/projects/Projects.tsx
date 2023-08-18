@@ -1,6 +1,7 @@
 import { Breadcrumbs, Grid, Link, Typography } from '@mui/material';
 import { IProject } from '../../types/IProject';
 import Project from '../../components/project/Project';
+import Layout from '../../components/layout/Layout';
 
 const Projects = () => {
   const data: Array<IProject> = [
@@ -89,7 +90,6 @@ const Projects = () => {
         'Create Components library to follow style guide.',
         'Refactoring legacy code to follow style guide.',
         'Collaborated seamlessly with a developer situated in a different timezone, demonstrating effective communication and teamwork across geographical boundaries.',
-        '',
       ],
       techStack: ['React'],
       languages: ['Typescript', 'HTML', 'CSS'],
@@ -98,7 +98,7 @@ const Projects = () => {
     {
       association: 'Pack of 7',
       title: 'Roomable',
-      description: 'Web application and Web API to ',
+      description: 'A web application and Web API to manage the room bookings.',
       myContributions: [
         'Established a CI/CD pipeline, streamlining the deployment process of the Angular application to an Azure Static Web Application.',
         'Integrated maps using the Azure Maps API.',
@@ -158,54 +158,28 @@ const Projects = () => {
   ];
 
   return (
-    <div
-      style={{
-        backgroundColor: 'beige',
-        minHeight: '100%',
-      }}
-    >
-      <Grid
-        style={{
-          margin: '0 auto 0 auto',
-          padding: '24px',
-          width: '100%',
-          maxWidth: '1200px',
-          height: '100%',
-          color: '#213547',
-          fontFamily: 'Helvetica',
-          textAlign: 'left',
-        }}
-        container
-        spacing={2}
-      >
-        <div style={{ width: '100%' }}>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography color="text.primary">Projects</Typography>
-          </Breadcrumbs>
-          <h3 style={{ marginTop: '60px' }}>Rapid Loans</h3>
-          {data
-            .filter((project) => project.association === 'Rapid Loans')
-            .map((project) => (
-              <Project project={project} />
-            ))}
-          <h3 style={{ marginTop: '60px' }}>Pack of 7</h3>
-          {data
-            .filter((project) => project.association === 'Pack of 7')
-            .map((project) => (
-              <Project project={project} />
-            ))}
-          <h3 style={{ marginTop: '60px' }}>Personal</h3>
-          {data
-            .filter((project) => project.association === 'Personal')
-            .map((project) => (
-              <Project project={project} />
-            ))}
-        </div>
-      </Grid>
-    </div>
+    <Layout>
+      <div style={{ width: '100%' }}>
+        <h3>Rapid Loans</h3>
+        {data
+          .filter((project) => project.association === 'Rapid Loans')
+          .map((project) => (
+            <Project project={project} />
+          ))}
+        <h3 style={{ marginTop: '60px' }}>Pack of 7</h3>
+        {data
+          .filter((project) => project.association === 'Pack of 7')
+          .map((project) => (
+            <Project project={project} />
+          ))}
+        <h3 style={{ marginTop: '60px' }}>Personal</h3>
+        {data
+          .filter((project) => project.association === 'Personal')
+          .map((project) => (
+            <Project project={project} />
+          ))}
+      </div>
+    </Layout>
   );
 };
 
