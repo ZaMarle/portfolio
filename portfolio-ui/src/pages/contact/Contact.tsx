@@ -1,29 +1,36 @@
-import { Button, Grid, TextField } from '@mui/material';
-import { useForm } from 'react-hook-form';
+import { Button, Grid, TextField, Typography } from '@mui/material';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import Layout from '../../components/layout/Layout';
+
+interface IContactForm {
+  firstname: string;
+  lastname: string;
+  email: string;
+  message: string;
+}
 
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<IContactForm>();
 
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<IContactForm> = (data) => {
     console.log(data);
-    // You can implement your submission logic here, e.g., send data to a server.
   };
 
   return (
     <Layout>
       <div style={{ maxWidth: '600px', margin: 'auto' }}>
-        <h3>Get in touch!</h3>
-        <div style={{ marginBottom: '40px' }}>
-          Whether you're an employer with a passion for software development or
-          someone looking to connect, I'm here for you. As a dedicated developer
-          with a love for his craft, I'm ready to contribute, teach and learn.
-          Let's connect and make things happen.
-        </div>
+        <Typography variant="h3">Get in touch!</Typography>
+        <Typography variant="body1" style={{ marginBottom: '40px' }}>
+          Whether you&apos;re an employer with a passion for software
+          development or someone looking to connect, I&apos;m here for you. As a
+          dedicated developer with a love for his craft, I&apos;m ready to
+          contribute, teach and learn. Let&apos;s connect and make things
+          happen.
+        </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2} style={{}}>
             <Grid item xs={12} sm={6}>
@@ -33,7 +40,7 @@ const Contact = () => {
                 label="Firstname"
                 variant="standard"
                 style={{ width: '100%' }}
-                {...register('firstname', { required: true })}
+                inputProps={register('firstname', { required: true })}
               />
               {errors.firstname && (
                 <p style={{ color: 'red' }}>This field is required</p>
@@ -46,7 +53,7 @@ const Contact = () => {
                 label="Lastname"
                 variant="standard"
                 style={{ width: '100%' }}
-                {...register('lastname', { required: true })}
+                inputProps={register('lastname', { required: true })}
               />
               {errors.lastname && (
                 <p style={{ color: 'red' }}>This field is required</p>
@@ -59,7 +66,7 @@ const Contact = () => {
                 label="Email"
                 variant="standard"
                 style={{ width: '100%' }}
-                {...register('email', {
+                inputProps={register('email', {
                   required: true,
                   pattern: /^\S+@\S+$/i,
                 })}
@@ -79,6 +86,7 @@ const Contact = () => {
                 minRows={4}
                 variant="standard"
                 style={{ width: '100%' }}
+                inputProps={register('message', { required: true })}
               />
               {errors.message && (
                 <p style={{ color: 'red' }}>This field is required</p>

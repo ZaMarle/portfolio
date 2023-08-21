@@ -1,4 +1,5 @@
 import Chip from '@mui/material/Chip';
+import { Typography } from '@mui/material';
 import { IProject } from '../../types/IProject';
 
 interface IProjectProps {
@@ -8,31 +9,43 @@ interface IProjectProps {
 const Project = ({ project }: IProjectProps) => {
   return (
     <div style={{ marginBottom: '120px' }}>
-      <h4>{project.title}</h4>
-      <div>{project.description}</div>
-      <ul></ul>
-      {project.myContributions.map((contribution) => (
-        <li>{contribution}</li>
-      ))}
-      <div style={{ marginTop: '24px' }}>Tech Stack:</div>
-      {project.techStack.map((item) => (
+      <Typography variant="h4">{project.title}</Typography>
+      <Typography variant="body1">{project.description}</Typography>
+      <ul>
+        {project.myContributions.map((contribution, index) => (
+          <li key={index}>
+            <Typography variant="body1">{contribution}</Typography>
+          </li>
+        ))}
+      </ul>
+      <Typography variant="h6" style={{ marginTop: '24px' }}>
+        Tech Stack:
+      </Typography>
+      {project.techStack.map((item, index) => (
         <Chip
+          key={index}
           label={item}
           variant="outlined"
           style={{ marginRight: '6px', marginTop: '6px' }}
         />
       ))}
-      <div style={{ marginTop: '24px' }}>Languages:</div>
-      {project.languages.map((item) => (
+      <Typography variant="h6" style={{ marginTop: '24px' }}>
+        Languages:
+      </Typography>
+      {project.languages.map((item, index) => (
         <Chip
+          key={index}
           label={item}
           variant="outlined"
           style={{ marginRight: '6px', marginTop: '6px' }}
         />
       ))}
-      <div style={{ marginTop: '24px' }}>Other:</div>
-      {project.other.map((items) => (
+      <Typography variant="h6" style={{ marginTop: '24px' }}>
+        Other:
+      </Typography>
+      {project.other.map((items, index) => (
         <Chip
+          key={index}
           label={items}
           variant="outlined"
           style={{ marginRight: '6px', marginTop: '6px' }}

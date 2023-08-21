@@ -3,3 +3,8 @@
   height: 100vh;
   width: 100vw;
 }
+h3 {
+  letter-spacing: 0.02857em;
+  font-size: 18.87px;
+  text-transform: none;
+}
