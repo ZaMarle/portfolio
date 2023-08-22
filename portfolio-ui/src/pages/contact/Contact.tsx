@@ -1,6 +1,5 @@
 import { Button, Divider, Grid, TextField, Typography } from '@mui/material';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import Layout from '../../components/layout/Layout';
 
 interface IContactForm {
