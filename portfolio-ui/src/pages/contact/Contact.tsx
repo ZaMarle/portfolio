@@ -1,5 +1,6 @@
-import { Button, Grid, TextField, Typography } from '@mui/material';
+import { Button, Divider, Grid, TextField, Typography } from '@mui/material';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import axios from 'axios';
 import Layout from '../../components/layout/Layout';
 
 interface IContactForm {
@@ -12,18 +13,24 @@ interface IContactForm {
 const Contact = () => {
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
   } = useForm<IContactForm>();
 
-  const onSubmit: SubmitHandler<IContactForm> = (data) => {
-    console.log(data);
-  };
+  // const onSubmit: SubmitHandler<IContactForm> = (data) => {
+  //   console.log(data);
+  //   axios
+  //     .post(`https://formsubmit.co/1712bb82ef6d184ff1885d7214935d16`, data)
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  // };
 
   return (
     <Layout>
-      <div style={{ maxWidth: '600px', margin: 'auto' }}>
-        <Typography variant="h3">Get in touch!</Typography>
+      <div>
+        <Typography variant="h3">Get in touch</Typography>
+        <Divider style={{ margin: '24px 0' }} />
         <Typography variant="body1" style={{ marginBottom: '40px' }}>
           Whether you&apos;re an employer with a passion for software
           development or someone looking to connect, I&apos;m here for you. As a
@@ -31,7 +38,11 @@ const Contact = () => {
           contribute, teach and learn. Let&apos;s connect and make things
           happen.
         </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+        <form
+          action="https://formsubmit.co/1712bb82ef6d184ff1885d7214935d16"
+          method="POST"
+        >
           <Grid container spacing={2} style={{}}>
             <Grid item xs={12} sm={6}>
               <TextField

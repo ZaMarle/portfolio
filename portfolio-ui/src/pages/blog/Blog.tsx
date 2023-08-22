@@ -30,7 +30,9 @@ const Blog = () => {
               className="button"
               onClick={() => navigate(`/Blog/${article.id}`)}
             >
-              <Typography variant="h3">{article.title}</Typography>
+              <Typography variant="h4" style={{ textAlign: 'left' }}>
+                {article.title}
+              </Typography>
             </Button>
             <Typography variant="h6">{article.description}</Typography>
           </div>

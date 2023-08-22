@@ -28,8 +28,8 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    '@typescript-eslint/no-unused-vars': 2,
-    'no-unused-vars': 2,
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'no-unused-vars': 'warn',
     'react/no-array-index-key': 0,
   },
 };

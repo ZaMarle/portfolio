@@ -19,7 +19,7 @@ const Layout = ({ children }: ILayoutProps) => {
           margin: '0 auto 0 auto',
           padding: '24px',
           width: '100%',
-          maxWidth: '1200px',
+          maxWidth: '800px',
           height: '100%',
           color: '#213547',
           fontFamily: 'Helvetica',
