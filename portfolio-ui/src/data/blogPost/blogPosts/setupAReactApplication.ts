@@ -19,7 +19,7 @@ const setupAReactApplication: IBlogPost = {
     { type: 'p', content: 'Run: npm i' },
     { type: 'subheading', content: 'Open application' },
     { type: 'p', content: 'Run cd ..' },
-    { type: 'p', content: 'Run: npm i' },
+    { type: 'p', content: 'Run: code .' },
     { type: 'subheading', content: 'Add Eslint' },
     { type: 'p', content: 'Run: npm i -D eslint' },
     { type: 'p', content: 'Run: npx eslint --init' },
@@ -77,6 +77,7 @@ const setupAReactApplication: IBlogPost = {
     tabWidth: 2,
     semi: true,
     singleQuote: true,
+    endOfLine: 'auto',
 };`,
     },
     { type: 'p', content: 'to .prettierrc.cjs ' },
@@ -89,16 +90,17 @@ const setupAReactApplication: IBlogPost = {
     {
       type: 'code',
       content: `rules: {
-    'react/react-in-jsx-scope': 0,
-    'react/function-component-definition': [
-        2,
-        {
-            namedComponents: 'arrow-function',
-            unnamedComponents: 'arrow-function',
-        },
-    ],
-    'no-unused-vars': 'warn',
-    'react/no-array-index-key': 0,
+  'react/react-in-jsx-scope': 0,
+  'react/function-component-definition': [
+    2,
+    {
+      namedComponents: 'arrow-function',
+      unnamedComponents: 'arrow-function',
+    },
+  ],
+  '@typescript-eslint/no-unused-vars': 'warn',
+  'no-unused-vars': 'warn',
+  'react/no-array-index-key': 0,
 }`,
     },
   ],
